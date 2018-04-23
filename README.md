@@ -1,5 +1,7 @@
 # herc-edge-login
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/HERCone/herc-edge-login.svg)](https://greenkeeper.io/)
+
 This repo contains a basic app created by following the readme instructions at https://github.com/Airbitz/edge-login-ui/tree/develop/packages/edge-login-ui-rn
 
 ##### Min Requirements
