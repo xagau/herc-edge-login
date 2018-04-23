@@ -10,8 +10,8 @@
   "dependencies": {
     "edge-core-js": "^0.7.1",
     "edge-login-ui-rn": "^0.2.10",
-    "react": "16.3.1",
-    "react-native": "0.55.2",
+    "react": "16.3.2",
+    "react-native": "0.55.3",
     "react-native-fast-crypto": "^1.5.5",
     "react-native-fs": "^2.9.12",
     "react-native-randombytes": "git://github.com/Airbitz/react-native-randombytes.git",
@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
-    "babel-preset-react-native": "4.0.0",
+    "babel-preset-react-native": "5.0.0",
     "jest": "22.4.3",
-    "react-test-renderer": "16.3.1",
+    "react-test-renderer": "16.3.2",
     "rn-nodeify": "^10.0.0"
   },
   "jest": {
