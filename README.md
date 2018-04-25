@@ -8,11 +8,6 @@ This repo contains a basic app created by following the readme instructions at h
 
 Disclaimer: These documents were written on April 21, 2018 from a MacOS running High Sierra. These instructions were not tested on other OS.
 
-# Things I needed to change
-- gradle dependencies
-- setting up android SDK
-- making sure I had all the support files and the right ADK
-
 # useful terminal commands like grepping and find
 
 Tools you'll need: android studio SDK and genymotion.
@@ -31,7 +26,7 @@ Tools you'll need: android studio SDK and genymotion.
   - Is your android over 6.0? Go to preferences -> appearnce & behavior -> system settings -> android sdk. I have android 8.1(oreo)
   *If none of these work, you might have to fiddle with the gradle file located under app/build.gradle*
 7. To see if it will build, go to Build. Under build, click 'Clean Project', then click 'Rebuild Project'. If nothing happens, try clicking 'Make Project'.
-8. If your build is successful, chances are in your favor that it will run in an emulator. You can use either the emulator built into android studio or genymotion. I got it running in genymotion. To set up genymotion, refer to the instructions under 'Setting up genymotion in a  mac'
+8. If your build is successful, chances are in your favor that it will run in an emulator. You can use either the emulator built into android studio or genymotion. I got it running in genymotion.
 9. If you are using genymotion, make sure it is running in the background. Your device must have APK over 23. If you are using an android studio emulator, please make sure you have already created it. I created a 'Nexus 6 -  API 25 - 7.1.0'
 10. At the top of android studio, click the triangular "play" button. It should load up a window showing you all the devices it detects are running right now.
 11. Select genymotion.
@@ -39,7 +34,3 @@ Tools you'll need: android studio SDK and genymotion.
 13. Go to your terminal window. CD into the root directory. In this case, it is herc-edge-login/. Enter the command: `react-native start`
 14. Swap back over to the genymotion window.
 15. You should see the app!
-
-
-
-### Setting up genymotion in a  mac
