@@ -1,7 +1,7 @@
 /**
  * Juliana's Notes
  * Trying to figure out how these pieces work together.
- * whats react-native run-android
+ * react-native run-android
  */
 
 import React, { Component } from 'react'
