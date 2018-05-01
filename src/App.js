@@ -1,9 +1,9 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- * 
+ *
  */
-
+import MenuOptions from '../screens/MenuOptions';
 import React, { Component } from 'react'
 import { LoginScreen } from 'edge-login-ui-rn'
 import { makeEdgeContext } from 'edge-core-js'
