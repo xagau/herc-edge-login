@@ -5,6 +5,7 @@
  */
 import MenuOptions from '../screens/MenuOptions';
 import React, { Component } from 'react'
+import { StackNavigator } from 'react-navigation';
 import { LoginScreen } from 'edge-login-ui-rn'
 import { makeEdgeContext } from 'edge-core-js'
 import {
@@ -41,7 +42,8 @@ export default class App extends Component{
   }
   renderLoginApp = () => {
     if (this.state.account){
-      return <Text style={styles.welcome}>Logged In</Text>
+      // return <Text style={styles.welcome}>Logged In</Text>
+      navigate('MenuOptions');
     }
     if (this.state.context && !this.state.account) {
       return <LoginScreen
