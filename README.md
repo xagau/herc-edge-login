@@ -5,8 +5,13 @@ This repo contains a basic app created by following the readme instructions at h
 ##### Min Requirements
 - Node: Version 8.9.1
 - yarn 1.2.3
+- JDK 8.0
 
 Disclaimer: These documents were written on April 21, 2018 from a MacOS running High Sierra. These instructions were not tested on other OS.
+
+Check your JDK version by running "java -version" in the terminal.
+Check which node version by running "node -v"
+Check which yarn version by running "yarn -v"
 
 ## Running the Demo without Android Studio
 Alternatively, you may simply clone the repository and enter 'react-native run-android' at the root directory. Make sure a genymotion emulator is running in the background. And make sure the emulator fits minimum requirements.

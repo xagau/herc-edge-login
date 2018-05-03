@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
 import { View, Platform, Image, TouchableHighlight } from 'react-native';
+
 import { STATUS_BAR_HEIGHT } from '../constants';
 import styles from '../assets/styles';
 import icon from '../assets/hercLogoPillar.png';
