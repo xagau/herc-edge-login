@@ -10,8 +10,10 @@ This repo contains a basic app created by following the readme instructions at h
 Disclaimer: These documents were written on April 21, 2018 from a MacOS running High Sierra. These instructions were not tested on other OS.
 
 Check your JDK version by running "java -version" in the terminal.
+Find all your JDK versions by running "/usr/libexec/java_home -V". If you have an incompatible one, you must delete the folder shown here.
 Check which node version by running "node -v"
 Check which yarn version by running "yarn -v"
+
 
 ## Running the Demo without Android Studio
 Alternatively, you may simply clone the repository and enter 'react-native run-android' at the root directory. Make sure a genymotion emulator is running in the background. And make sure the emulator fits minimum requirements.
@@ -41,3 +43,6 @@ Tools you'll need: android studio SDK and genymotion.
 13. Go to your terminal window. CD into the root directory. In this case, it is herc-edge-login/. Enter the command: `react-native start`
 14. Swap back over to the genymotion window.
 15. You should see the app!
+
+## Missing License Errors
+APK files require license agreements. If you get an error telling you to accept their agreements first, in your terminal run "$ANDROID_HOME/tools/bin/sdkmanager --licenses". You must accept all their agreements. You will now see your license files under ~/Library/Android/sdk/licenses.
