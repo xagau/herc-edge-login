@@ -124,6 +124,16 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+        debug {
+            debuggable true
+            initWith debug
+            jniDebuggable true
+            externalNativeBuild {
+              ndkBuild {
+                 cFlags "-DDEBUG=1"
+               }
+            }
+       }
     }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
