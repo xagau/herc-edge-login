@@ -1,9 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- */
-import MenuOptions from '../screens/MenuOptions';
+import MainNavigation from './navigation/MainNavigation';
 import React, { Component } from 'react'
 import { StackNavigator } from 'react-navigation';
 import { LoginScreen } from 'edge-login-ui-rn'
@@ -42,8 +37,9 @@ export default class App extends Component{
   }
   renderLoginApp = () => {
     if (this.state.account){
-      // return <Text style={styles.welcome}>Logged In</Text>
-      navigate('MenuOptions');
+      return <Text style={styles.welcome}>Logged In</Text>
+      // navigate('MenuOptions');
+        <MainNavigation />
     }
     if (this.state.context && !this.state.account) {
       return <LoginScreen
