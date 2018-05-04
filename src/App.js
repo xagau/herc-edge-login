@@ -37,9 +37,8 @@ export default class App extends Component{
   }
   renderLoginApp = () => {
     if (this.state.account){
-      return <Text style={styles.welcome}>Logged In</Text>
-      // navigate('MenuOptions');
-        <MainNavigation />
+      return <MainNavigation />
+      // <Text style={styles.welcome}>Logged In</Text>
     }
     if (this.state.context && !this.state.account) {
       return <LoginScreen
