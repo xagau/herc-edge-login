@@ -9,7 +9,7 @@ import logo from '../assets/hercLogoBreak.png';
 // import backArrow from '../assets/icon_backarrow.png';
 // import BackButton from '../components/BackButton';
 
-import Welcome from "../screens/Welcome";
+// import Welcome from "../screens/Welcome";
 // import FileUp from "../screens/FileUp";
 // import DocUp from "../screens/DocUp";
 // import Confirm from "../screens/Confirm";
@@ -34,7 +34,7 @@ import MenuOptions from '../screens/MenuOptions';
 // import TransAssetList from '../screens/TransAssetList';
 
 const MainNavigator = StackNavigator({
-    Welcome: { screen: Welcome },
+    // Welcome: { screen: Welcome },
     MenuOptions: { screen: MenuOptions },
     // Create: { screen: Create },
     // Tee: { screen: Tee },

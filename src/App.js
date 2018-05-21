@@ -1,4 +1,5 @@
-import MenuOptions from './screens/MenuOptions';
+import MainNavigation from './navigation/MainNavigation';
+import MenuOptions from '',
 import React, { Component } from 'react'
 import { StackNavigator } from 'react-navigation';
 import { LoginScreen } from 'edge-login-ui-rn'
@@ -7,7 +8,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native'
 
 function setupCore () {
@@ -37,9 +39,15 @@ export default class App extends Component{
   }
   renderLoginApp = () => {
     if (this.state.account){
-      return <MenuOptions />
-      // <Text style={styles.welcome}>Logged In</Text>
+      return (
+        <View>
+          <Button onPress={() => navigate('MenuOptions')} style={{color: 'white', fontSize: 40, height: 50, width: 205, marginTop: 100}}>ENTER</Button>
+        </View>
+      )
+      // return <MainNavigation />
+      // return <Text style={styles.welcome}>Logged In</Text>
     }
+
     if (this.state.context && !this.state.account) {
       return <LoginScreen
       context={this.state.context}
