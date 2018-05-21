@@ -5,7 +5,7 @@ import { View, Platform, Image, TouchableHighlight } from 'react-native';
 // import { STATUS_BAR_HEIGHT } from '../constants';
 // import styles from '../assets/styles';
 // import icon from '../assets/hercLogoPillar.png';
-// import logo from '../assets/hercLogoBreak.png';
+import logo from '../assets/hercLogoBreak.png';
 // import backArrow from '../assets/icon_backarrow.png';
 // import BackButton from '../components/BackButton';
 
@@ -14,7 +14,7 @@ import Welcome from "../screens/Welcome";
 // import DocUp from "../screens/DocUp";
 // import Confirm from "../screens/Confirm";
 // import Create from "../screens/Create";
-// import MenuOptions from '../screens/MenuOptions';
+import MenuOptions from '../screens/MenuOptions';
 // import InputMan from '../screens/InputMan';
 // import Tee from '../screens/Tee';
 // import Digi from '../screens/DigiViewer';
@@ -35,7 +35,7 @@ import Welcome from "../screens/Welcome";
 
 const MainNavigator = StackNavigator({
     Welcome: { screen: Welcome },
-    // MenuOptions: { screen: MenuOptions },
+    MenuOptions: { screen: MenuOptions },
     // Create: { screen: Create },
     // Tee: { screen: Tee },
     // Digi: { screen: Digi },
@@ -61,37 +61,37 @@ const MainNavigator = StackNavigator({
 },
 
 
-    // {
-    //     initialRouteName: 'Welcome',
-    //     navigationOptions: ({ navigation }) => ({
-    //
-    //         headerTitle: <Image style={{
-    //             height: 100,
-    //             width: 240,
-    //             alignSelf: 'center',
-    //             resizeMode: 'contain',
-    //             marginLeft: 20,
-    //         }}
-    //             source={logo} />,
-    //
-    //         headerStyle: {
-    //             height: Platform.OS === 'android' ? 100 + STATUS_BAR_HEIGHT : 100,
-    //             backgroundColor: '#021227',
-    //
-    //         },
-    //         headerTitleStyle: {
-    //             marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-    //             textAlign: 'center',
-    //             textAlignVertical: 'center',
-    //             backgroundColor: '#021227',
-    //             alignSelf: 'center',
-    //
-    //         },
-    //         headerRight: <View></View>,
-    //         headerLeft: <View></View>
-    //
-    //     })
-    // }
+    {
+        initialRouteName: 'MenuOptions',
+        navigationOptions: ({ navigation }) => ({
+
+            headerTitle: <Image style={{
+                height: 100,
+                width: 240,
+                alignSelf: 'center',
+                resizeMode: 'contain',
+                marginLeft: 20,
+            }}
+                source={logo} />,
+
+            headerStyle: {
+                height: Platform.OS === 'android' ? 100 + 50 : 100,
+                backgroundColor: '#021227',
+
+            },
+            headerTitleStyle: {
+                marginTop: Platform.OS === 'android' ? 50 : 0,
+                textAlign: 'center',
+                textAlignVertical: 'center',
+                backgroundColor: '#021227',
+                alignSelf: 'center',
+
+            },
+            headerRight: <View></View>,
+            headerLeft: <View></View>
+
+        })
+    }
   )
 
  class MainNavigation extends Component {
