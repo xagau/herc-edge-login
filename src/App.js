@@ -24,7 +24,7 @@ limitations under the License.
 
 */
 import MainNavigation from './navigation/MainNavigation';
-import MenuOptions from '',
+import MenuOptions from './screens/MenuOptions',
 import React, { Component } from 'react'
 import { StackNavigator } from 'react-navigation';
 import { LoginScreen } from 'edge-login-ui-rn'
