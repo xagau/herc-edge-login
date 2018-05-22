@@ -24,11 +24,11 @@ limitations under the License.
 
 */
 import MainNavigation from './navigation/MainNavigation';
-import MenuOptions from './screens/MenuOptions',
-import React, { Component } from 'react'
-import { StackNavigator } from 'react-navigation';
-import { LoginScreen } from 'edge-login-ui-rn'
-import { makeEdgeContext } from 'edge-core-js'
+import MenuOptions from './screens/MenuOptions';
+import React, { Component } from 'react';
+import {StackNavigator } from 'react-navigation';
+import {LoginScreen } from 'edge-login-ui-rn';
+import {makeEdgeContext } from 'edge-core-js';
 import {
   Platform,
   StyleSheet,
@@ -47,7 +47,7 @@ function setupCore () {
   })
 }
 
-export default class App extends Component{
+export default class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -92,11 +92,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10
-  }
+    margin: 10,
+  },
 });
