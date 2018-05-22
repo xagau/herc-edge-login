@@ -1,3 +1,28 @@
+/*
+
+Copyright (c) 2018 HERC SEZC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+
+you may not use this file except in compliance with the License.
+
+You may obtain a copy of the License at
+
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+
+Unless required by applicable law or agreed to in writing, software
+
+distributed under the License is distributed on an "AS IS" BASIS,
+
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+See the License for the specific language governing permissions and
+
+limitations under the License.
+
+*/
 import MainNavigation from './navigation/MainNavigation';
 import MenuOptions from '',
 import React, { Component } from 'react'
@@ -39,11 +64,7 @@ export default class App extends Component{
   }
   renderLoginApp = () => {
     if (this.state.account){
-      return (
-        <View>
-          <Button onPress={() => navigate('MenuOptions')} style={{color: 'white', fontSize: 40, height: 50, width: 205, marginTop: 100}}>ENTER</Button>
-        </View>
-      )
+      return <Text>Logged In</Text>
       // return <MainNavigation />
       // return <Text style={styles.welcome}>Logged In</Text>
     }
