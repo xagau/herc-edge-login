@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
+import { TabNavigator} from 'react-navigation';
 import { View, Platform, Image, TouchableHighlight } from 'react-native';
 //
 // import { STATUS_BAR_HEIGHT } from '../constants';

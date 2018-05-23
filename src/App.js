@@ -25,10 +25,10 @@ limitations under the License.
 */
 import MainNavigation from './navigation/MainNavigation';
 import MenuOptions from './screens/MenuOptions';
-import React, { Component } from 'react';
-import {StackNavigator } from 'react-navigation';
-import {LoginScreen } from 'edge-login-ui-rn';
-import {makeEdgeContext } from 'edge-core-js';
+import React, {Component} from 'react';
+import {StackNavigator} from 'react-navigation';
+import {LoginScreen} from 'edge-login-ui-rn';
+import {makeEdgeContext} from 'edge-core-js';
 import {
   Platform,
   StyleSheet,
@@ -36,6 +36,7 @@ import {
   View,
   Button
 } from 'react-native'
+import { Tabs } from './navigation/TabNavigation';
 
 function setupCore () {
   return makeEdgeContext({
@@ -63,10 +64,10 @@ export default class App extends Component {
     })
   }
   renderLoginApp = () => {
-    if (this.state.account){
-      return <Text>Logged In</Text>
-      // return <MainNavigation />
-      // return <Text style={styles.welcome}>Logged In</Text>
+    if (this.state.account) {
+      console.log('Hello this is me. You have logged in. ')
+      return <Tabs />
+      // {return <Text style={styles.welcome}>Logged In</Text>}
     }
 
     if (this.state.context && !this.state.account) {
