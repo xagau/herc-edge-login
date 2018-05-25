@@ -1,6 +1,6 @@
 import React from 'react';
-import { TabNavigator} from 'react-navigation';
-import Feed from '../sample/Feed';
+import { TabNavigator, StackNavigator} from 'react-navigation';
+import Feed from './sample/Feed';
 
 export const Tabs = TabNavigator({
     Feed: {
