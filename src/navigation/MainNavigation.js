@@ -4,49 +4,23 @@ import { View, Platform, Image, TouchableHighlight } from 'react-native';
 import logo from '../assets/hercLogoBreak.png';
 import MenuOptions from '../screens/MenuOptions';
 import Feed from './sample/Feed';
+import Welcome from '../screens/Welcome';
 
 const MainNavigator = StackNavigator({
     MenuOptions: { screen: MenuOptions },
     Feed: { screen: Feed },
-},
-
-
-    {
-        initialRouteName: 'MenuOptions',
-        navigationOptions: ({ navigation }) => ({
-
-            headerTitle: <Image style={{
-                height: 100,
-                width: 240,
-                alignSelf: 'center',
-                resizeMode: 'contain',
-                marginLeft: 20,
-            }}
-                source={logo} />,
-
-            headerStyle: {
-                height: Platform.OS === 'android' ? 100 + 50 : 100,
-                backgroundColor: '#021227',
-
-            },
-            headerTitleStyle: {
-                marginTop: Platform.OS === 'android' ? 50 : 0,
-                textAlign: 'center',
-                textAlignVertical: 'center',
-                backgroundColor: '#021227',
-                alignSelf: 'center',
-
-            },
-            headerRight: <View></View>,
-            headerLeft: <View></View>
-
-        })
-    }
-  )
+    Welcome: {screen: Welcome },
+}, {
+  initialRouteName: 'Welcome',
+})
 
  class MainNavigation extends Component {
+   componentWillMount(){
+     console.log('MainNavigation Will Mount.')
+   }
+
    componentDidMount(){
-     console.log('MainNavigation Mounted. Returning MainNavigator')
+     console.log('MainNavigation Did Mounted.')
    }
 
     render() {

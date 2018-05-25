@@ -1,48 +1,42 @@
 import React, { Component } from 'react';
+import { View, Text, StyleSheet } from 'react-native'
 
 class Feed extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [],
     }
   }
 
   componentWillMount(){
-    console.log("Feed Mounted!")
-    this.setState({projects:[
-      {
-        title: 'Business Website',
-        category: 'Web Design'
-      },
-      {
-        title: 'Social App',
-        category: 'Mobile Development'
-      },
-      {
-        title: 'Ecommerce Shopping Cart',
-        category: 'Web Development'
-      }
-    ]});
+    console.log("Feed Will Mounted!")
+  }
+  componentDidMount(){
+    console.log("Feed Did Mounted!")
   }
 
   render() {
-    let projectItems;
-    if(this.state.projects.length){
-      projectItems = this.state.projects.map(project => {
-        return (
-          <ProjectItem onDelete={this.deleteProject.bind(this)} key={project.title} projectitem={project}/>
-        )
-      });
-    }
-
     return(
-      <div>
-      <h3>Latest Projects</h3>
-        {projectItems}
-      </div>
+      <View style={styles.container}>
+        <Text style={styles.welcome}>This is the Feed</Text>
+      </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+});
+
 
 export default Feed;
