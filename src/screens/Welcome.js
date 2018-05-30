@@ -3,13 +3,6 @@ import { StyleSheet, Text, TextInput, View, Image, TouchableHighlight, Alert } f
 import { StackNavigator } from 'react-navigation';
 
 class Welcome extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pin: ""
-    }
-  }
-
   componentWillMount(){
     console.log("Welcome Will Mounted!")
   }
@@ -18,13 +11,7 @@ class Welcome extends Component {
     console.log("Welcome Did Mounted!")
   }
 
-  _onPinPress(){
-    const { navigate } = this.props.navigation;
-     // navigate('MenuOptions');
-     console.log('Trying to go to MenuOptions')
-  }
   render(){
-    const { navigate } = this.props.navigation;
     return(
       <View style={styles.container}>
         <Text style={styles.welcome}>This is the Welcome</Text>
@@ -32,7 +19,6 @@ class Welcome extends Component {
     )
   };
 }
-
 
 const styles = StyleSheet.create({
   container: {

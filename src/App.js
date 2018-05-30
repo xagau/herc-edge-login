@@ -27,7 +27,7 @@ import MainNavigation from './navigation/MainNavigation';
 import MenuOptions from './screens/MenuOptions';
 import React, {Component} from 'react';
 import {StackNavigator} from 'react-navigation';
-import { Tabs } from './navigation/TabNavigation';
+import { Tabs } from './navigation/Router';
 import {LoginScreen} from 'edge-login-ui-rn';
 import {makeEdgeContext} from 'edge-core-js';
 import {
@@ -66,7 +66,7 @@ export default class App extends Component {
   renderLoginApp = () => {
     if (this.state.account) {
       console.log('Hello this is me. You have logged in. ')
-      return <MainNavigation />
+      return <Tabs />
       // {return <Text style={styles.welcome}>Logged In</Text>}
     }
 

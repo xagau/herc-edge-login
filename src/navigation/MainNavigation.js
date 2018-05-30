@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TabNavigator, StackNavigator} from 'react-navigation';
+import {Tabs} from './Router';
 import { View, Platform, Image, TouchableHighlight } from 'react-native';
 import logo from '../assets/hercLogoBreak.png';
 import MenuOptions from '../screens/MenuOptions';
@@ -25,7 +26,7 @@ const MainNavigator = StackNavigator({
 
     render() {
         return (
-            <MainNavigator />
+            <Tabs />
         )
     }
 }
