@@ -17,7 +17,7 @@
     "react-native-fs": "^2.9.12",
     "react-native-randombytes": "git://github.com/Airbitz/react-native-randombytes.git",
     "react-native-tcp": "git://github.com/Airbitz/react-native-tcp.git",
-    "react-navigation": "^2.0.2",
+    "react-navigation": "^1.5.11",
     "yarn": "^1.6.0"
   },
   "devDependencies": {
