@@ -27,9 +27,12 @@ import MainNavigation from './navigation/MainNavigation';
 import MenuOptions from './screens/MenuOptions';
 import React, {Component} from 'react';
 import {StackNavigator} from 'react-navigation';
-import { Tabs } from './navigation/TabNavigation';
+import { Tabs } from './navigation/Router';
 import {LoginScreen} from 'edge-login-ui-rn';
 import {makeEdgeContext} from 'edge-core-js';
+import {Feed} from './sample/Feed';
+import { Me } from './sample/Me';
+
 import {
   Platform,
   StyleSheet,
@@ -58,35 +61,26 @@ export default class App extends Component {
     // Creating the context is async, so we store it in our state:
     setupCore().then(context => this.setState(state => ({ ...state, context })))
   }
+  
   onLogin = (error = null, accountObject) => {
     this.setState({
       account: accountObject
     })
   }
-  renderLoginApp = () => {
-    if (this.state.account) {
-      console.log('Hello this is me. You have logged in. ')
-      return <MainNavigation />
-      // {return <Text style={styles.welcome}>Logged In</Text>}
-    }
 
-    if (this.state.context && !this.state.account) {
-      return <LoginScreen
-      context={this.state.context}
-      onLogin={this.onLogin.bind(this)}
-      accountOptions={{}}
-      />
-    }
-    return <Text style={styles.welcome}>Loading</Text>
-  }
+
   render() {
     return (
       <View style={styles.container}>
-        {this.renderLoginApp()}
+        <Button title='Feed' onPress={() => this.props.navigation.navigate('Feed')} />
       </View>
     );
   }
 }
+const AppStackNavigator = new StackNavigator({
+  Feed: {screen: Feed},
+  Me: {screen: Me},
+})
 
 const styles = StyleSheet.create({
   container: {
