@@ -1,5 +1,7 @@
 /*
 
+https://www.youtube.com/watch?v=5f5VEEmMSyE
+
 Copyright (c) 2018 HERC SEZC
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,17 +63,34 @@ export default class App extends Component {
     // Creating the context is async, so we store it in our state:
     setupCore().then(context => this.setState(state => ({ ...state, context })))
   }
-  
+
   onLogin = (error = null, accountObject) => {
     this.setState({
       account: accountObject
     })
+  }
+  renderLoginApp = () => {
+    if (this.state.account) {
+      console.log('Hello this is me. You have logged in. ')
+      return <Tabs />
+      // {return <Text style={styles.welcome}>Logged In</Text>}
+    }
+
+    if (this.state.context && !this.state.account) {
+      return <LoginScreen
+      context={this.state.context}
+      onLogin={this.onLogin.bind(this)}
+      accountOptions={{}}
+      />
+    }
+    return <Text style={styles.welcome}>Loading</Text>
   }
 
 
   render() {
     return (
       <View style={styles.container}>
+        {this.renderLoginApp()}
         <Button title='Feed' onPress={() => this.props.navigation.navigate('Feed')} />
       </View>
     );
