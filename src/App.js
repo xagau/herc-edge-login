@@ -53,6 +53,7 @@ function setupCore () {
   })
 }
 
+
 export default class App extends Component {
   constructor (props) {
     super(props)
@@ -71,6 +72,7 @@ export default class App extends Component {
   }
   renderLoginApp = () => {
     if (this.state.account) {
+      console.log(this.state.context, this.state.account)
       console.log('Hello this is me. You have logged in. ')
       return <Tabs />
       // {return <Text style={styles.welcome}>Logged In</Text>}
@@ -88,29 +90,24 @@ export default class App extends Component {
 
 
   render() {
-    return (
-      <View style={styles.container}>
-        {this.renderLoginApp()}
-        <Button title='Feed' onPress={() => this.props.navigation.navigate('Feed')} />
-      </View>
-    );
+      return (
+        <View style={styles.container}>
+          {this.renderLoginApp()}
+        </View>
+      );
+    }
   }
-}
-const AppStackNavigator = new StackNavigator({
-  Feed: {screen: Feed},
-  Me: {screen: Me},
-})
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
+container: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#F5FCFF',
+},
+welcome: {
+  fontSize: 20,
+  textAlign: 'center',
+  margin: 10,
+},
 });

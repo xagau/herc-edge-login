@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native';
 
-class Feed extends Component {
+class Welcome extends Component {
   constructor() {
     super();
     this.state = {
@@ -9,16 +9,20 @@ class Feed extends Component {
   }
 
   componentWillMount(){
-    console.log("Feed Will Mounted!")
+    console.log("Welcome Will Mounted!")
   }
   componentDidMount(){
-    console.log("Feed Did Mounted!")
+    console.log("Welcome Did Mounted!")
   }
+  componentWillUnMount(){
+    console.log("Welcome Will UnMount!")
+  }
+
 
   render() {
     return(
       <View style={styles.container}>
-        <Text style={styles.welcome}>This is the Feed</Text>
+        <Text style={styles.welcome}>This is the Welcome</Text>
       </View>
     )
   }
@@ -39,4 +43,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Feed;
+export default Welcome;

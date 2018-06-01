@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Feed extends Component {
+class Feed2 extends Component {
   constructor() {
     super();
     this.state = {
@@ -9,7 +9,7 @@ class Feed extends Component {
   }
 
   componentWillMount(){
-    console.log("Feed Mounted!")
+    console.log("Feed2 Mounted!")
     this.setState({projects:[
       {
         title: 'Business Website',
@@ -45,4 +45,4 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+export default Feed2;

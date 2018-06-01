@@ -3,7 +3,7 @@ import { TabNavigator, StackNavigator} from 'react-navigation';
 import { View, Platform, Image, TouchableHighlight } from 'react-native';
 import logo from '../assets/hercLogoBreak.png';
 import MenuOptions from '../screens/MenuOptions';
-import Feed from './sample/Feed';
+import Feed from './Feed';
 import Welcome from '../screens/Welcome';
 
 const MainNavigator = StackNavigator({
