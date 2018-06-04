@@ -32,8 +32,8 @@ import {StackNavigator} from 'react-navigation';
 import { Tabs } from './navigation/Router';
 import {LoginScreen} from 'edge-login-ui-rn';
 import {makeEdgeContext} from 'edge-core-js';
-import {Feed} from './sample/Feed';
-import { Me } from './sample/Me';
+import {Feed} from './navigation/Feed';
+import { Me } from './navigation/Me';
 
 import {
   Platform,
