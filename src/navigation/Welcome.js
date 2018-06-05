@@ -10,6 +10,7 @@ class Welcome extends Component {
 
   componentWillMount(){
     console.log("Welcome Will Mounted!")
+    return <Text style={styles.welcome}>This is the Welcome</Text>
   }
   componentDidMount(){
     console.log("Welcome Did Mounted!")
@@ -33,12 +34,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#EEEEEE',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: '#000000',
   },
 });
 
