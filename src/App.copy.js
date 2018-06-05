@@ -25,10 +25,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 */
+import MainNavigation from './navigation/MainNavigation';
+import MenuOptions from './screens/MenuOptions';
 import React, {Component} from 'react';
-import { AppStackNavigator } from './navigation/Router';
+import {StackNavigator} from 'react-navigation';
+import { Tabs, AppStackNavigator } from './navigation/Router';
 import {LoginScreen} from 'edge-login-ui-rn';
 import {makeEdgeContext} from 'edge-core-js';
+import {Feed} from './navigation/Feed';
+import { Me } from './navigation/Me';
 
 import {
   Platform,
@@ -57,58 +62,44 @@ export default class App extends Component {
       account: null,
     }
     // Creating the context is async, so we store it in our state:
-    setupCore().then(context => this.setState(state => ({ ...state, context })))
+    // setupCore().then(context => this.setState(state => ({ ...state, context })))
   }
 
-  onLogin = (error = null, accountObject) => {
-    this.setState({
-      account: accountObject
-    })
-  }
-
-  handleClick() {
-    console.log('Click happened');
-  }
-
-  renderLoginApp = () => {
-    if (this.state.account) {
-      console.log(this.state.context, this.state.account)
-      console.log('Hello this is me. You have logged in. ')
-      return (
-        <View>
-          <AppStackNavigator />
-          <Text>This is a space-holding textblock. The component above renders only in the width of this textblock.</Text>
-        </View>
-      )
-      // return <Button
-  // onPress={this.handleClick}
-//   onPress={() =>
-//           navigate('Welcome')
-//         }
-//   title="Learn More"
-//   color="#841584"
-//   accessibilityLabel="Learn more about this purple button"
-// />
-
-    }
-
-
-    if (this.state.context && !this.state.account) {
-      return <LoginScreen
-      context={this.state.context}
-      onLogin={this.onLogin.bind(this)}
-      accountOptions={{}}
-      />
-    }
-    return <Text style={styles.welcome}>Loading</Text>
-  }
+  // onLogin = (error = null, accountObject) => {
+  //   this.setState({
+  //     account: accountObject
+  //   })
+  // }
+  // function renderLoginApp() {
+  //   console.log('this is the renderlogin App')
+  //   // {this.renderLoginApp()}
+  // }
+  // renderLoginApp = () => {
+  //   if (this.state.account) {
+  //     console.log(this.state.context, this.state.account)
+  //     console.log('Hello this is me. You have logged in. ')
+  //     // return <AppStackNavigator />
+  //     return <Text style={styles.welcome}>Logged In</Text>
+  //   }
+  //
+  //   if (this.state.context && !this.state.account) {
+  //     return <LoginScreen
+  //     context={this.state.context}
+  //     onLogin={this.onLogin.bind(this)}
+  //     accountOptions={{}}
+  //     />
+  //   }
+  //   return <Text style={styles.welcome}>Loading</Text>
+  // }
 
 
   render() {
       return (
-        <View style={styles.container}>
-          {this.renderLoginApp()}
-        </View>
+        // <View style={styles.container}>
+        //
+        //   <Text style={styles.welcome}>Test Test</Text>
+        // </View>
+        <AppStackNavigator />
       );
     }//end render
   }//end component
