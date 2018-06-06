@@ -12,15 +12,16 @@ import {
   Button
 } from 'react-native'
 
-function setupCore () {
-  return makeEdgeContext({
-    // Replace this with your own API key from https://developer.airbitz.co:
-    apiKey: '0b5776a91bf409ac10a3fe5f3944bf50417209a0',
-    appId: 'com.mydomain.myapp',
-    vendorName: 'Chain Net',
-    vendorImageUrl: 'https://airbitz.co/go/wp-content/uploads/2016/10/GenericEdgeLoginIcon.png'
-  })
-}
+// function setupCore () {
+//   return makeEdgeContext({
+//     // Replace this with your own API key from https://developer.airbitz.co:
+//     apiKey: '0b5776a91bf409ac10a3fe5f3944bf50417209a0',
+//     appId: 'com.mydomain.myapp',
+//     vendorName: 'Chain Net',
+//     vendorImageUrl: 'https://airbitz.co/go/wp-content/uploads/2016/10/GenericEdgeLoginIcon.png',
+//     plugins: [ ethereumCurrencyPluginFactory ]
+//   })
+// }
 
 
 export default class App extends Component {
@@ -30,8 +31,18 @@ export default class App extends Component {
       context: null,
       account: null,
     }
+    makeEdgeContext({
+      // Replace this with your own API key from https://developer.airbitz.co:
+      apiKey: '0b5776a91bf409ac10a3fe5f3944bf50417209a0',
+      appId: 'com.mydomain.myapp',
+      vendorName: 'Chain Net',
+      vendorImageUrl: 'https://airbitz.co/go/wp-content/uploads/2016/10/GenericEdgeLoginIcon.png',
+      plugins: [ethereumCurrencyPluginFactory]
+    }).then(context => {
+      this.setState({ context })
+    })
     // Creating the context is async, so we store it in our state:
-    setupCore().then(context => this.setState(state => ({ ...state, context })))
+    // setupCore().then(context => this.setState(state => ({ ...state, context })))
   }
 
   onLogin = (error = null, accountObject) => {
