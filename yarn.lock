@@ -2192,7 +2192,7 @@ edge-core-js@^0.7.1:
     scrypt-js "^2.0.3"
     utf8 "^3.0.0"
 
-edge-currency-ethereum@0.10.1:
+edge-currency-ethereum@^0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/edge-currency-ethereum/-/edge-currency-ethereum-0.10.1.tgz#febf56621dc5097ef3dfa8a9e4817ee522663506"
   dependencies:
