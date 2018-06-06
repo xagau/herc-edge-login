@@ -29,6 +29,7 @@ import React, {Component} from 'react';
 import { AppStackNavigator } from './navigation/Router';
 import {LoginScreen} from 'edge-login-ui-rn';
 import {makeEdgeContext} from 'edge-core-js';
+import { ethereumCurrencyPluginFactory } from 'edge-currency-ethereum';
 
 import {
   Platform,
@@ -38,16 +39,17 @@ import {
   Button
 } from 'react-native'
 
-function setupCore () {
-  return makeEdgeContext({
-    // Replace this with your own API key from https://developer.airbitz.co:
-    apiKey: '0b5776a91bf409ac10a3fe5f3944bf50417209a0',
-    appId: 'com.mydomain.myapp',
-    vendorName: 'Chain Net',
-    vendorImageUrl: 'https://airbitz.co/go/wp-content/uploads/2016/10/GenericEdgeLoginIcon.png'
-  })
+makeEdgeContext({
+   apiKey: '0b5776a91bf409ac10a3fe5f3944bf50417209a0',
+   appId: 'com.mydomain.myapp',
+   vendorName: 'Chain Net',
+   vendorImageUrl: 'https://airbitz.co/go/wp-content/uploads/2016/10/GenericEdgeLoginIcon.png',
+   plugins: [ ethereumCurrencyPluginFactory ]
+ }).then(context => {
+   console.log('edge context being made =)')
+   this.setState({ context })
+ })
 }
-
 
 export default class App extends Component {
   constructor (props) {
@@ -56,8 +58,6 @@ export default class App extends Component {
       context: null,
       account: null,
     }
-    // Creating the context is async, so we store it in our state:
-    setupCore().then(context => this.setState(state => ({ ...state, context })))
   }
 
   onLogin = (error = null, accountObject) => {

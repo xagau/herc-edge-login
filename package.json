@@ -17,6 +17,7 @@
 
     "edge-core-js": "^0.7.1",
     "edge-login-ui-rn": "^0.2.10",
+    "edge-currency-ethereum": "0.10.1",
     "react-native-fast-crypto": "^1.5.5",
     "react-native-fs": "^2.9.12",
     "react-native-randombytes": "git://github.com/Airbitz/react-native-randombytes.git",
