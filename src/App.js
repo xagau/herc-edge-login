@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { AppStackNavigator } from './navigation/Router';
 import {LoginScreen} from 'edge-login-ui-rn';
 import {makeEdgeContext} from 'edge-core-js';
+import { ethereumCurrencyPluginFactory } from 'edge-currency-ethereum';
 
 import {
   Platform,
