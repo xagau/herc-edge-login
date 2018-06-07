@@ -10,7 +10,7 @@ import document from '../assets/docs.png';
 import originator from "../assets/origin.png";
 import recipient from "../assets/recipient.png";
 import Submit from '../components/SubmitBtn';
-import { DocumentPicker } from 'expo';
+// import { DocumentPicker } from 'expo';
 import { connect } from 'react-redux';
 import styles from '../assets/styles';
 import { addDoc } from '../actions/AssetActions';

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableHighlight, Alert } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import { Button } from 'react-native-elements';
 
 class Welcome extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Welcome extends Component {
 
   _onPinPress(){
     const { navigate } = this.props.navigation;
-     // navigate('MenuOptions');
+     navigate('MenuOptions');
      console.log('Trying to go to MenuOptions')
   }
   render(){
@@ -28,6 +29,7 @@ class Welcome extends Component {
     return(
       <View style={styles.container}>
         <Text style={styles.welcome}>This is the Welcome</Text>
+        <Button onPress={() => this._onPinPress()} title="press"/>
       </View>
     )
   };

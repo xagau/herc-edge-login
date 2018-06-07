@@ -7,7 +7,7 @@ import styles from "../assets/styles";
 import Button from 'react-native-button';
 import BackButton from "../components/BackButton";
 import { addAsset, getHercId } from "../actions/AssetActions";
-import { ImagePicker } from 'expo';
+// import { ImagePicker } from 'expo';
 import next from "../assets/nextLabel.png";
 import { STATUS_BAR_HEIGHT } from '../constants';
 

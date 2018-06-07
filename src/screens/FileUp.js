@@ -14,7 +14,7 @@ import BackButton from "../components/BackButton";
 
 import Submit from '../components/SubmitBtn';
 
-import { ImagePicker, DocumentPicker } from 'expo';
+// import { ImagePicker, DocumentPicker } from 'expo';
 import { addPhoto } from '../actions/AssetActions';
 
 class FileUp extends Component {
