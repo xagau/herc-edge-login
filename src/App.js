@@ -30,6 +30,8 @@ export default class App extends Component {
     this.state = {
       context: null,
       account: null,
+      walletId: null,
+      wallet: null
     }
     makeEdgeContext({
       // Replace this with your own API key from https://developer.airbitz.co:
@@ -45,10 +47,28 @@ export default class App extends Component {
     // setupCore().then(context => this.setState(state => ({ ...state, context })))
   }
 
-  onLogin = (error = null, accountObject) => {
-    this.setState({
-      account: accountObject
-    })
+  onLogin = (error = null, account) => {
+    if (!this.state.account) {
+      this.setState({account})
+    }
+    if (!this.state.walletId) {
+      // Check if there is a wallet, if not create it
+      let walletInfo = account.getFirstWalletInfo('wallet:ethereum')
+      if (walletInfo) {
+        this.setState({walletId: walletInfo.id})
+        this.logger(`State WalletID: ${this.state.walletId}`)
+      } else {
+        account.createCurrencyWallet('wallet:ethereum', {
+          name: 'My First Wallet',
+          fiatCurrencyCode: 'iso:USD'
+        }).then(wallet => {
+          this.setState({ wallet })
+          this.setState({walletId: wallet.id})
+          this.logger(`State WalletID: ${this.state.walletId}`)
+          this.logger(`State Wallet: ${this.state.wallet}`)
+        })
+      }
+    }
   }
 
   handleClick() {
@@ -57,7 +77,8 @@ export default class App extends Component {
 
   renderLoginApp = () => {
     if (this.state.account) {
-      console.log(this.state.context, this.state.account)
+      console.log("the context: ", this.state.context)
+      console.log("the state", this.state)
       console.log('Hello this is me. You have logged in. ')
       return (
         <View>
@@ -96,6 +117,13 @@ export default class App extends Component {
         </View>
       );
     }//end render
+    logger (t) {
+      if (typeof t === 'object') {
+        t = JSON.stringify(t)
+      }
+      this.setState({ content: this.state.content + t + '\n'})
+      console.log(t)
+    }//end logger
   }//end component
 
 const styles = StyleSheet.create({
