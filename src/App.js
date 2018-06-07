@@ -42,6 +42,8 @@ export default class App extends Component {
       plugins: [ethereumCurrencyPluginFactory]
     }).then(context => {
       this.setState({ context })
+      this.logger("State Context")
+      this.logger(this.state.context)
     })
     // Creating the context is async, so we store it in our state:
     // setupCore().then(context => this.setState(state => ({ ...state, context })))
@@ -50,6 +52,8 @@ export default class App extends Component {
   onLogin = (error = null, account) => {
     if (!this.state.account) {
       this.setState({account})
+      this.logger("State Account")
+      this.logger(this.state.account)
     }
     if (!this.state.walletId) {
       // Check if there is a wallet, if not create it
@@ -65,7 +69,7 @@ export default class App extends Component {
           this.setState({ wallet })
           this.setState({walletId: wallet.id})
           this.logger(`State WalletID: ${this.state.walletId}`)
-          this.logger(`State Wallet: ${this.state.wallet}`)
+          this.logger(this.state.wallet)
         })
       }
     }
@@ -117,11 +121,14 @@ export default class App extends Component {
         </View>
       );
     }//end render
+    // const obj = {prop1: 'prop1Value', prop2: 'prop2Value', child: {childProp1: 'childProp1Value'}}
+    // console.log(obj)
+    // console.log("Julianaaaaa")
+    // this.logger(obj)
     logger (t) {
       if (typeof t === 'object') {
         t = JSON.stringify(t)
       }
-      this.setState({ content: this.state.content + t + '\n'})
       console.log(t)
     }//end logger
   }//end component
