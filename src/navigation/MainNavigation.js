@@ -92,7 +92,7 @@ const MainNavigator = StackNavigator({
 
             },
             headerRight: <View></View>,
-            headerLeft: <View></View>
+            headerLeft: <BackButton navigation={navigation} />
 
         })
     })
