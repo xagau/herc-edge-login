@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Platform, TextInput, Text, View, Image, ScrollView, TouchableHighlight, Alert, TouchableNativeFeedback } from 'react-native';
-import { STATUS_BAR_HEIGHT } from '../constants';
+
 
 import { StackNavigator } from 'react-navigation';
 
@@ -24,38 +24,24 @@ class Splash3 extends Component {
         return {
 
             headerTitle:
-                <View style={{ flex: 1, alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
-                    <TouchableHighlight onPress={() => navigation.navigate('MenuOptions')}>
-                        <Image style={{
-                            height: 80,
-                            width: 80,
-                            alignSelf: 'center',
-                            borderRadius: 40,
-                            resizeMode: 'contain'
-                        }}
-                            source={{ uri: params.logo }} />
-                    </TouchableHighlight>
-                    <Text style={styles.assetHeaderLabel}>{params.name}</Text>
-                </View>,
-
-            headerStyle: {
-                height: Platform.OS === 'android' ? 100 + STATUS_BAR_HEIGHT : 100,
-                backgroundColor: '#021227',
-
-            },
-            headerTitleStyle: {
-                marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-                textAlign: 'center',
-                alignSelf: 'center',
-                // textAlignVertical: 'center',
-                backgroundColor: '#021227',
-
-            },
+              <View style={{ flex: 1, alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableHighlight style={{ flex: 1, height: 80, width: 80, borderRadius: 40, marginTop: 10 }} onPress={() => navigation.navigate('MenuOptions')}>
+                  <Image style={{
+                    height: 80,
+                    width: 80,
+                    alignSelf: 'center',
+                    borderRadius: 40,
+                    resizeMode: 'contain'
+                  }}
+                    source={{ uri: params.logo }} />
+                </TouchableHighlight>
+                <Text style={styles.assetHeaderLabel}>{params.name}</Text>
+              </View>,
             headerRight: <View></View>,
             headerLeft: <BackButton navigation={navigation} />
-
+      
+          }
         }
-    }
     constructor(props) {
         super(props);
     }
@@ -68,12 +54,12 @@ class Splash3 extends Component {
     render() {
         const { navigate } = this.props.navigation;
         // let image = this.props.asset.Images ? this.props.asset.Images[0] : null;
-        let locationImage = this.props.transHeader.tXLocation === 'recipient' ? recipient : originator;
+        // let locationImage = this.props.transHeader.tXLocation === 'recipient' ? recipient : originator;
         let logo = this.props.logo;
         let asset = this.props.transHeader;
-        let hercId = this.props.hercId;
+        let hercId = this.props.hercId || "No Herc ID";
         console.log(asset, 'splash3 this.props.transinfo');
-
+        console.log(this.props.location, "hopefully the fucking location, damn cached")
 
         return (
             <View style={styles.container}>
@@ -124,7 +110,7 @@ class Splash3 extends Component {
 const mapStateToProps = (state) => ({
     logo: state.AssetReducers.selectedAsset.Logo,
     transHeader: state.AssetReducers.trans.header,
-    hercId: state.AssetReducers.trans.header.hercId
-
+    hercId: state.AssetReducers.trans.header.hercId,
+    location: state.AssetReducers.trans.data.tXLocation
 });
 export default connect(mapStateToProps)(Splash3);
