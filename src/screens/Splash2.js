@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Platform, Text, View, Image, ScrollView, TouchableHighlight, Alert, TouchableNativeFeedback } from 'react-native';
-import { STATUS_BAR_HEIGHT } from '../constants';
+// import { STATUS_BAR_HEIGHT } from '../constants';
 import arrow from "../assets/icon_backarrow.png";
 import styles from "../assets/styles";
 import { connect } from "react-redux";
@@ -17,8 +17,8 @@ class Splash2 extends Component {
     return {
 
       headerTitle:
-        <View style={{ flex: 1, alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
-          <TouchableHighlight style={{ flex: 1, height: 80, width: 80, borderRadius: 40 }} onPress={() => navigation.navigate('MenuOptions')}>
+        (<View style={{ flex: 1, alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
+          <TouchableHighlight style={{ flex: 1, height: 80, width: 80, borderRadius: 40, marginTop: 10 }} onPress={() => navigation.navigate('MenuOptions')}>
             <Image style={{
               height: 80,
               width: 80,
@@ -29,23 +29,8 @@ class Splash2 extends Component {
               source={{ uri: params.logo }} />
           </TouchableHighlight>
           <Text style={styles.assetHeaderLabel}>{params.name}</Text>
-        </View>,
-
-      headerStyle: {
-        height: Platform.OS === 'android' ? 100 + STATUS_BAR_HEIGHT : 100,
-        backgroundColor: '#021227',
-      },
-      headerTitleStyle: {
-        marginTop: Platform.OS === 'android' ? + STATUS_BAR_HEIGHT : 0,
-        textAlign: 'center',
-        alignSelf: 'center',
-        // textAlignVertical: 'center',
-        backgroundColor: '#021227',
-
-      },
-      headerRight: <View></View>,
-      headerLeft: <BackButton navigation={navigation} />
-
+        </View>)
+     
     }
   }
   constructor(props) {

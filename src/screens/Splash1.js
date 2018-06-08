@@ -30,7 +30,7 @@ class Splash1 extends Component {
         style={{ height: 50, width: 250, marginLeft: 20 }}
       />
     ),
-    headerLeft: <BackButton navigation={navigation} />
+    // headerLeft: <BackButton navigation={navigation} />
   });
   constructor(props) {
     super(props);
@@ -53,6 +53,7 @@ class Splash1 extends Component {
     const { navigate } = this.props.navigation;
 
     this.props.selectAsset(asset);
+
     navigate("Splash2", { logo: asset.logo, name: asset.name });
   };
 
