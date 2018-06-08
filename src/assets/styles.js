@@ -265,11 +265,13 @@ module.exports = StyleSheet.create({
         flexDirection: 'row',
         // backgroundColor: 'blue',
         justifyContent: 'space-between',
-        alignItems: 'center',
-        alignContent: 'center',
+        // alignItems: 'center',
+        // alignContent: 'center',
         margin: 17,
-        width: "70%"
+        width: "70%",
+        marginLeft: 25
     },
+    
     assetLabel: {
         color: 'white',
         alignSelf: 'center',

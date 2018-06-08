@@ -122,10 +122,10 @@ class Splash3 extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  logo: state.AssetReducers.selectedAsset.Logo,
-  name: state.AssetReducers.selectedAsset.Name,
-  transHeader: state.AssetReducers.trans.header,
-  hercId: state.AssetReducers.trans.header.hercId
+const mapStateToProps = (state) => ({
+    logo: state.AssetReducers.selectedAsset.Logo,
+    transHeader: state.AssetReducers.trans.header,
+    hercId: state.AssetReducers.trans.header.hercId,
+    location: state.AssetReducers.trans.data.tXLocation
 });
 export default connect(mapStateToProps)(Splash3);
