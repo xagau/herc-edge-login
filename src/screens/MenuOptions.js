@@ -72,7 +72,7 @@ class MenuOptions extends Component {
             />
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={() => navigate('TransAssetList', { web3: this.web3 })}>
+          <TouchableHighlight onPress={() => navigate('TransAssetList')}>
             <Image
               style={styles.button}
               source={blockScan}
