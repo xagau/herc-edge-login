@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Platform, StyleSheet, Text, View, Image, ScrollView, TouchableHighlight, Alert } from 'react-native';
 import Button from 'react-native-button';
 import menuOptions from '../components/buttons/menuOptions.png';
-import { STATUS_BAR_HEIGHT } from '../constants';
 import { StackNavigator } from 'react-navigation';
 import styles from '../assets/styles';
 import camera from '../assets/camera.png';
@@ -14,45 +13,41 @@ import BackButton from "../components/BackButton";
 
 import Submit from '../components/SubmitBtn';
 
-import { ImagePicker, DocumentPicker } from 'expo';
-import { addPhoto } from '../actions/AssetActions';
-
+// TODO: NEED TO IMPLEMENT https://github.com/react-community/react-native-image-picker/tree/master or something similar
 class FileUp extends Component {
   static navigationOptions = ({ navigation }) => {
     const { params } = navigation.state;
+    console.log(params, "params where's the header?");
 
     return {
-
-      headerTitle:
-        <View style={{ flex: 1, alignSelf: 'center', justifyContent: 'center', alignItems: 'center' }}>
-          <Image style={{
-            height: 80,
-            width: 80,
-            alignSelf: 'center',
-            borderRadius: 40,
-            resizeMode: 'contain'
+      headerTitle: (
+        <View
+          style={{
+            flex: 1,
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center"
           }}
-            source={{ uri: params.logo }} />
+        >
+          <TouchableHighlight
+            onPress={() => navigation.navigate("MenuOptions")}
+          >
+            <Image
+              style={{
+                height: 80,
+                width: 80,
+                alignSelf: "center",
+                borderRadius: 40,
+                resizeMode: "contain"
+              }}
+              source={{ uri: params.logo }}
+            />
+          </TouchableHighlight>
           <Text style={styles.assetHeaderLabel}>{params.name}</Text>
-        </View>,
-
-      headerStyle: {
-        height: Platform.OS === 'android' ? 100 + STATUS_BAR_HEIGHT : 100,
-        backgroundColor: '#021227',
-
-      },
-      headerTitleStyle: {
-        marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-        textAlign: 'center',
-        alignSelf: 'center',
-        // textAlignVertical: 'center',
-        backgroundColor: '#021227',
-
-      },
-      headerRight: <View></View>,
-      headerLeft: <BackButton navigation={navigation} />
-    }
-  }
+        </View>
+      )
+    };
+  };
   state = {
     image: null,
   }
@@ -110,7 +105,7 @@ class FileUp extends Component {
 
     let { image } = this.state;
     let transInfo = this.props.transInfo;
-    let locationImage = this.props.transInfo.location === 'recipient' ? recipient : originator;
+    let locationImage = this.props.locationImage === 'recipient' ? recipient : originator;
     let logo = this.props.logo;
 
     return (
@@ -159,6 +154,7 @@ class FileUp extends Component {
   
 const mapStateToProps= (state) => ({
           transInfo: state.AssetReducers.trans.header,
+          locationImage: state.AssetReducers.trans.data.tXLocation,
           logo: state.AssetReducers.selectedAsset.Logo
 
         });

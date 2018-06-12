@@ -7,28 +7,26 @@ import styles from "../assets/styles";
 import Button from 'react-native-button';
 import BackButton from "../components/BackButton";
 import { addAsset, getHercId } from "../actions/AssetActions";
-import { ImagePicker } from 'expo';
+// import { ImagePicker } from 'expo';
 import next from "../assets/nextLabel.png";
 import { STATUS_BAR_HEIGHT } from '../constants';
 
 
 class Tee extends Component {
   static navigationOptions = ({navigation}) => ({
-    headerStyle: {
-      height: Platform.OS === 'android' ? 80 + STATUS_BAR_HEIGHT : 80,
-      backgroundColor: '#021227',
+    // headerStyle: {
+    //   height: Platform.OS === 'android' ? 80 + STATUS_BAR_HEIGHT : 80,
+    //   backgroundColor: '#021227',
 
-    },
+    // },
     headerTitle: <Image style={{
       height: 80,
       width: 200,
-      marginLeft: 30,
+      marginLeft: 20,
       resizeMode: 'contain'
     }}
-      source={logo} />,
+      source={logo} />
 
-      headerLeft: <BackButton navigation={navigation} />
-       
     })
 
   constructor(props) {

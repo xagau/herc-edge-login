@@ -1,30 +1,108 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableHighlight, Alert } from 'react-native';
+// import WelcomeHeader from "../components/WelcomeHeader";
+import menuOpts from "../components/buttons/menuOptions.png";
 import { StackNavigator } from 'react-navigation';
+// import Title from "../components/MenuInputTitle";
+import logo from "../assets/hercLogoBreak.png";
+import home from "../components/buttons/homeBtn.png";
+import hiprBtn from "../components/buttons/hiprBtn.png";
+import igvc from "../components/buttons/igvc.png";
+import verifyBtn from "../components/buttons/verifyBtn.png";
+import digiView from "../components/buttons/digitalViewBtn.png";
+import blockScan from "../components/buttons/blockScannerBtn.png";
+import settings from "../components/buttons/settingsBtn.png";
+import wallet from "../components/buttons/walletBtn.png";
+import styles from "../assets/styles";
+import { connect } from 'react-redux';
+import { listAssets, getHercId, fetchAssets } from '../actions/AssetActions';
+import BackButton from '../components/BackButton';
 
- class MenuOptions extends Component {
 
-  render(){
+class MenuOptions extends Component {
+
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentDidMount() {
+    this.props.getHercId();
+
+    console.log('working it');
+
+  }
+
+  render() {
+    
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
-        <Text>This is Menu Options</Text>
+
+        {/* <Image source={logo} style={styles.menuLogo}/> */}
+        <Image source={menuOpts} style={styles.menuInputTitle} />
+
+        <View style={styles.menu}>
+          <TouchableHighlight onPress={() => navigate('PreHipr')}>
+            <Image
+              style={styles.button}
+              source={hiprBtn}
+            />
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={() => navigate('Create')}>
+            <Image
+              style={styles.button}
+              source={igvc}
+            />
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={() => navigate('Splash1')}>
+            <Image
+              style={styles.button}
+              source={verifyBtn}
+            />
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={() => navigate('PreDigi')}>
+            <Image
+              style={styles.button}
+              source={digiView}
+            />
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={() => navigate('TransAssetList', { web3: this.web3 })}>
+            <Image
+              style={styles.button}
+              source={blockScan}
+            />
+          </TouchableHighlight>
+
+          {/* <TouchableHighlight>
+            <Image
+              style={styles.button}
+              source={settings}
+            />
+          </TouchableHighlight>  */}
+
+        </View>
+        <Text style={{ color: '#f3c736', alignSelf: 'baseline', fontSize: 8 }}>
+          V.0.2.5
+</Text>
       </View>
-    );
+
+
+    )
   };
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#111111'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  }
-});
+const mapDispatchToProps = (dispatch) => ({
 
-export default MenuOptions;
+  fetchAssets: () => dispatch(fetchAssets()),
+  getHercId: () => dispatch(getHercId()),
+  //  fetchData: () => dispatch(fetchData())
+
+
+})
+export default connect(null, mapDispatchToProps)(MenuOptions);

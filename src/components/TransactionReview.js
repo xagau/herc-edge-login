@@ -27,7 +27,7 @@ class TransRev extends Component {
             );
             let responseJson = await response.json();
             let fctPrice = responseJson.list["0"].pricePerHercForFCT; // this is what I'm going with for now  
-            console.log(fctPrice, 'newthing');
+            console.log(fctPrice, 'factomPrice');
             this.setState({ fctPrice });
 
         } catch (error) {
@@ -51,7 +51,8 @@ class TransRev extends Component {
 
         console.log(transInfo, 'transinfo in transreviewrender', transDat, 'transdata')
 
-        let locationImage = this.props.transInfo.location === 'recipient' ? recipient : originator;
+        let locationImage = transDat.tXLocation === 'recipient' ? recipient : originator;
+        console.log(transDat.tXLocation, "location")
         let list;
         let ediTName, ediTNum, doc, docSize = null;
         let image = transDat.images[0] || null;
@@ -96,8 +97,8 @@ class TransRev extends Component {
 
                 <Image style={styles.assetLocationNoTopMargin} source={locationImage} />
                 {/* {/* <Text style={styles.transRevName}>{transInfo.name}</Text> */}
-                <Text style={styles.transRevName}>HercID: {transInfo.hercId}</Text>
-                <Image style={styles.assetLocationNoTopMargin} source={locationImage} />
+                <Text style={styles.transRevName}>HercID: {transInfo.hercId||"No Herc ID"}</Text>
+                
                 <Text style={styles.transRevTime}>{dTime}</Text>
 
                 <Text style={styles.editLabel}>EDI-T-SET:</Text>
