@@ -3,31 +3,42 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "prepare": "npm run patch",
+    "patch": "find ./node_modules -name fetch-npm-browserify.js -print -exec sed -i.bk 's/self/global/g' {} \\;",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "postinstall": "sh ./postinstall.sh"
   },
   "rnpm": {
-    "assets": ["./src/assets/font"]
- },
+    "assets": [
+      "./src/assets/font"
+    ]
+  },
   "dependencies": {
-    "firebase": "^4.12.0",
     "@firebase/app-types": "^0.1.2",
     "@firebase/database-types": "^0.2.0",
-    "react": "16.3.1",
-    "react-native": "0.55.2",
-    "react-native-elements": "^0.18.5",
-    "react-native-vector-icons": "^4.4.2",
-    "react-native-button": "^2.3.0",
-    "react-navigation": "^1.4.1",
-    "react-native-deck-swiper": "^1.5.9",
-    "redux-devtools-extension": "^2.13.2",
     "edge-core-js": "^0.7.1",
     "edge-login-ui-rn": "^0.2.10",
+    "firebase": "^4.12.0",
+    "node-libs-react-native": "github:abec/node-libs-react-native",
+    "react": "16.3.1",
+    "react-native": "0.55.2",
+    "react-native-button": "^2.3.0",
+    "react-native-deck-swiper": "^1.5.9",
+    "react-native-elements": "^0.18.5",
     "react-native-fast-crypto": "^1.5.5",
     "react-native-fs": "^2.9.12",
+    "react-native-json-tree": "^1.2.0",
     "react-native-randombytes": "git://github.com/Airbitz/react-native-randombytes.git",
     "react-native-tcp": "git://github.com/Airbitz/react-native-tcp.git",
+    "react-native-vector-icons": "^4.4.2",
+    "react-navigation": "^1.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^0.20.5",
     "yarn": "^1.6.0"
   },
   "devDependencies": {
@@ -36,7 +47,9 @@
     "babel-preset-react-native": "4.0.0",
     "jest": "22.4.3",
     "react-test-renderer": "16.3.1",
-    "rn-nodeify": "^10.0.0"
+    "rn-nodeify": "^10.0.0",
+    "babel-preset-react-native-web3": "0.0.4",
+    "truffle-contract": "^3.0.0"
   },
   "jest": {
     "preset": "react-native"

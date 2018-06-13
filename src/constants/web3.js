@@ -1,6 +1,6 @@
 import 'babel-preset-react-native-web3/globals';
 import Web3 from 'web3';
-import truffleConfig from '../truffle';
+import truffleConfig from './truffle';
 const network = truffleConfig.networks.ropsten;
 
 // const TESTRPC_ADDRESS = `${network.protocol}://${network.host}:${network.port}`;

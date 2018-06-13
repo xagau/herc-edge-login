@@ -35,7 +35,7 @@ import store from "./store";
 import { LoginScreen } from "edge-login-ui-rn";
 import { makeEdgeContext } from "edge-core-js";
 
-import { Platform, StyleSheet, Text, View, Button } from "react-native";
+import { Platform, StyleSheet, Text, View, Button, Dimensions } from "react-native";
 
 function setupCore() {
   return makeEdgeContext({
@@ -73,14 +73,16 @@ export default class App extends Component {
 
   renderLoginApp = () => {
     if (this.state.account) {
+      let width = Dimensions.get('window').width;
+      console.log(width, "widthy");
       console.log(this.state.context, this.state.account);
       console.log("Hello this is me. You have logged in. ");
       return (
         <View>
-          <Provider  style={{width: 370}} store={store}>
+          <Provider  style={{width: width}} store={store}>
             <MainNavigation />
           </Provider>
-          <Text style={{width: 360, backgroundColor: "blue"}}>WTF</Text>
+          <Text style={{width: width, backgroundColor: "blue"}}>WTF</Text>
         </View>
       );
 
