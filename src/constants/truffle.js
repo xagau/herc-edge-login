@@ -14,6 +14,6 @@ module.exports = {
 			network_id: 3,
 		},
 	},
-	migrations_directory: './migrations',
+	migrations_directory: '../migrations',
 };
 // https://ropsten.infura.io/z3Gn6k0E1Kgu1W0I1WXU
