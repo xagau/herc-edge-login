@@ -20,11 +20,11 @@ Alternatively, you may simply clone the repository and enter 'react-native run-a
 
 ## Running the Demo with Android Studio
 Tools you'll need: android studio SDK and genymotion.
-1. In terminal, run 'adb'. If it works, then you've got androids SDK on the right path. Otherwise, you gotta follow expo docs to install genymotion.
-2. in the terminal, run 'exp'. If it works, then you've got expo. Other wise, you gotta npm install -g exp.
-3. In the temrinal, at project root, run 'yarn install' to install dependencies.
+1. In terminal, run `adb`. If it works, then you've got androids SDK on the right path. Otherwise, you gotta follow expo docs to install genymotion.
+2. in the terminal, run 'exp'. If it works, then you've got expo. Other wise, you gotta `npm install -g exp.`
+3. In the terminal, at project root, run 'yarn install' to install dependencies.
 4. Open up Android studio
-5. Do not load the root directory! Load from herc-edge-login/android/app. If it's the first time you are loading it, it should take Android studio like 5 minutes to build it.
+5. Do not load the root directory! Load from `herc-edge-login/android/app`. If it's the first time you are loading it, it should take Android studio like 5 minutes to build it.
 6. Here is where you might run into some potential errors. The error messages are only sometimes helpful. If none of the following advice helps you, please reach out to me and we will debug it together!
   - Do you have all the support files? Go to preferences -> appearnce & behavior -> system settings -> android sdk -> click the tab 'SDK tools' in the middle. Scroll down to the bottom and make sure you have both Android Support Repository and Google Repository checked off.
   - Are the support files in the right directory? I ran into a problem where my support files were all in the wrong directory so I had to move them to the right one. Run the command 'find / -name runtime-1.0.0.pom' runtime-1.0.0.pom is a file in the support repository. If you have this file somewhere on your system, your other support files are near it, probably cached. I manually moved them with the command (mv) to the correct directory so that android studio will be able to find them. I found mine in ~/.gradle/caches/
@@ -43,6 +43,14 @@ Tools you'll need: android studio SDK and genymotion.
 13. Go to your terminal window. CD into the root directory. In this case, it is herc-edge-login/. Enter the command: `react-native start`
 14. Swap back over to the genymotion window.
 15. You should see the app!
+
+## Did you add new dependencies? You have to sync your gradle
+- In android studio, you can sync your gradle files by going to file -> "sync project with gradle files"
+- Alternatively, you may also sync your gradle files from the terminal. To do so, you have to be in the directory where you ./gradlew file lives. Run the command `./gradlew build`(or `./gradlew clean` if you need to clear your gradle files)
+
+## Debugging
+The debugger I have been using is the React Native Debugger. https://github.com/jhen0409/react-native-debugger
+This repo has excellent install instructions.
 
 ## Missing License Errors
 APK files require license agreements. If you get an error telling you to accept their agreements first, in your terminal run "$ANDROID_HOME/tools/bin/sdkmanager --licenses". You must accept all their agreements. You will now see your license files under ~/Library/Android/sdk/licenses.
