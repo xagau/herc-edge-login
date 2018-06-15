@@ -148,11 +148,16 @@ android {
             }
         }
     }
+    dexOptions {
+    // Note: Added section because of this error "Process 'command '/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java'' finished with non-zero exit value 1"
+      javaMaxHeapSize "4g"
+    }
 }
 
 dependencies {
     compile project(':react-native-vector-icons')
     compile project(':edge-login-ui-rn')
+    compile project(':herc-edge-login-ui-rn')
     compile project(':react-native-tcp')
     compile project(':react-native-randombytes')
     compile project(':react-native-fs')

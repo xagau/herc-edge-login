@@ -32,7 +32,8 @@ import MainNavigation from "./navigation/MainNavigation";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import { LoginScreen } from "edge-login-ui-rn";
+// import { LoginScreen } from "edge-login-ui-rn";
+import { LoginScreen } from "herc-edge-login-ui-rn";
 import { makeEdgeContext } from "edge-core-js";
 import { ethereumCurrencyPluginFactory } from 'edge-currency-ethereum';
 
