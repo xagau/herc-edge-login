@@ -3,9 +3,14 @@ import {API_URL, USERNAME, PASSWORD} from './settings';
 
 export function _postIdology(payload) {
   console.log("************THIS IS POST IDOLOGY")
-  console.log(payload) //payload is an object {'firstName' : 'julie'}
-  console.log(API_URL, USERNAME, PASSWORD)
-
+  payload.username = USERNAME
+  payload.password = PASSWORD
+  console.log(payload)
+  return axios({
+    method: "POST",
+    url: API_URL,
+    data: payload
+  })
 }
 
 export function _fetchAllPromos() {

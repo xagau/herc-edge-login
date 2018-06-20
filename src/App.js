@@ -112,8 +112,43 @@ export default class App extends Component {
       console.log("the context: ", this.state.context)
       console.log("the state", this.state)
       console.log('Hello this is me. You have logged in. ')
-      var data = {'firstName':'julie'}
+      var data = {
+        // 'username' : username, //YOUR ExpectID USERNAME (16)
+        // 'password' : password, //YOUR ExpectID PASSWORD
+        'invoice': '', //YOUR INVOICE OR ORDER NUMBER (30)
+        'amount': '', //ORDER AMOUNT
+        'shipping': '', //SHIPPING AMOUNT
+        'tax': '',//TAX AMOUNT
+        'total': '',//TOTAL AMOUNT(SUM OF THE ABOVE)
+        'idType': '',//TYPE OF ID PROVIDED
+        'idIssuer': '',//ISSUING AGENCY OF ID
+        'idNumber': '',//NUMBER ON ID
+        'paymentMethod': '',//PAYMENT METHOD
+        'firstName' : 'john',
+        'lastName' : 'smith',
+        'address': '222333 peachtree place', //STREET ADDRESS
+        'city': '',
+        'state': '', //STATE (2)
+        'zip' : '30318', //5-DIGIT ZIP CODE (5)
+        'ssnLast4': '',//LAST 4 DIGITS OF SSN(4)
+        'ssn': '', //FULL SSN
+        'dobMonth': '',//MONTH OF BIRTH (2)
+        'dobDay': '',//DAY OF BIRTH (2)
+        'dobYear': '', //YEAR OF BIRTH (4)
+        'ipAddress': '',//IP ADDRESS E.G. 11.111.111.11
+        'email': '',//EMAIL ADDRESS
+        'telephone': '', //PHONE NUMBER
+        'sku': '',
+        'uid': '', //USER ID (EXTERNAL APPLICATION)
+        'altAddress': '',
+        'altCity': '',
+        'altState': '',
+        'altZip': '',
+      }
       _postIdology(data)
+        .then( (response) => {
+          console.log(response)
+        })
 
       return (
         <View>
