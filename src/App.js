@@ -39,6 +39,8 @@ import { ethereumCurrencyPluginFactory } from 'edge-currency-ethereum';
 
 import { Platform, StyleSheet, Text, View, Button } from "react-native";
 
+import { _postIdology } from "./components/api";
+
 // function setupCore () {
 //   return makeEdgeContext({
 //     // Replace this with your own API key from https://developer.airbitz.co:
@@ -110,6 +112,9 @@ export default class App extends Component {
       console.log("the context: ", this.state.context)
       console.log("the state", this.state)
       console.log('Hello this is me. You have logged in. ')
+      var data = {'firstName':'julie'}
+      _postIdology(data)
+
       return (
         <View>
           <Provider  style={{width: 370}} store={store}>
