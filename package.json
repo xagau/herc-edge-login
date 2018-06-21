@@ -14,14 +14,14 @@
     "react-native-vector-icons": "^4.4.2",
     "react-native-button": "^2.3.0",
     "react-navigation": "^1.0.0-beta.11",
-
     "edge-core-js": "^0.7.1",
     "edge-login-ui-rn": "^0.2.10",
     "react-native-fast-crypto": "^1.5.5",
     "react-native-fs": "^2.9.12",
     "react-native-randombytes": "git://github.com/Airbitz/react-native-randombytes.git",
     "react-native-tcp": "git://github.com/Airbitz/react-native-tcp.git",
-    "yarn": "^1.6.0"
+    "yarn": "^1.6.0",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
