@@ -39,7 +39,9 @@ import { ethereumCurrencyPluginFactory } from 'edge-currency-ethereum';
 
 import { Platform, StyleSheet, Text, View, Button } from "react-native";
 
+import axios from 'axios';
 import { _postIdology } from "./components/api";
+import {USERNAME, PASSWORD } from "./components/settings"
 
 // function setupCore () {
 //   return makeEdgeContext({
@@ -113,8 +115,8 @@ export default class App extends Component {
       console.log("the state", this.state)
       console.log('Hello this is me. You have logged in. ')
       var data = {
-        // 'username' : username, //YOUR ExpectID USERNAME (16)
-        // 'password' : password, //YOUR ExpectID PASSWORD
+        'username' : USERNAME, //YOUR ExpectID USERNAME (16)
+        'password' : PASSWORD, //YOUR ExpectID PASSWORD
         'invoice': '', //YOUR INVOICE OR ORDER NUMBER (30)
         'amount': '', //ORDER AMOUNT
         'shipping': '', //SHIPPING AMOUNT
@@ -145,9 +147,18 @@ export default class App extends Component {
         'altState': '',
         'altZip': '',
       }
-      _postIdology(data)
-        .then( (response) => {
-          console.log(response)
+      // _postIdology(data)
+      //   .then( response => {
+      //     console.log(response)
+      //   })
+
+      axios.post(`https://web.idologylive.com/api/idiq.svc?username=${USERNAME}&password=${PASSWORD}&firstName=john&lastName=smith&address=${data.address}&zip=30318`)
+        .then (res => {
+          console.log(res)
+          console.log(res.data)
+        })
+        .catch(error => {
+          console.log(error)
         })
 
       return (
