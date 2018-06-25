@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 import {API_URL, USERNAME, PASSWORD} from './settings';
 
 export function _postIdology(payload) {

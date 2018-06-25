@@ -152,6 +152,8 @@ export default class App extends Component {
       //     console.log(response)
       //   })
 
+      // TODO: Write a function that iterates through array, append to a string
+
       axios.post(`https://web.idologylive.com/api/idiq.svc?username=${USERNAME}&password=${PASSWORD}&firstName=john&lastName=smith&address=${data.address}&zip=30318`)
         .then (res => {
           console.log(res)
