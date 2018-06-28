@@ -38,17 +38,13 @@ const BackgroundImage = ({
         <View>
         {content}
       </View>
-        {/* <ImageBackground source={src} style={style}>
-          {content}
-        </ImageBackground> */}
       </TouchableWithoutFeedback>
     )
   }
   return (
+    <View>
     {content}
-    // <ImageBackground source={src} style={style}>
-    //   {content}
-    // </ImageBackground>
+  </View>
   )
 }
 
