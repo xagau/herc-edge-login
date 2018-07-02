@@ -1,3 +1,8 @@
+.env
+
+#this is where the idology API login information is stored
+src/components/settings.js
+
 # OSX
 #
 .DS_Store
